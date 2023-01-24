@@ -355,26 +355,26 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xc9 => println!("RET"),
         0xca => {
             println!(
-                "JZ     {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JZ     ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
         0xcb => println!("-"),
         0xcc => {
             println!(
-                "CZ     {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CZ     ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
         0xcd => {
             println!(
-                "CALL   {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CALL   ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -389,9 +389,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xd1 => println!("POP    D"),
         0xd2 => {
             println!(
-                "JNC    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JNC    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
