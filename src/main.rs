@@ -106,9 +106,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         }
         0x22 => {
             println!(
-                "SHLD   {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "SHLD   ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -124,9 +124,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0x29 => println!("DAD    H"),
         0x2a => {
             println!(
-                "LHLD   {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "LHLD   ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
         }
 
@@ -150,9 +150,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         }
         0x32 => {
             println!(
-                "STA    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "STA    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -168,9 +168,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0x39 => println!("DAD   SP"),
         0x3a => {
             println!(
-                "LDA    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "LDA    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -323,25 +323,25 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xc1 => println!("POP    B"),
         0xc2 => {
             println!(
-                "JNZ    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JNZ    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
         0xc3 => {
             println!(
-                "JMP    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JMP    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
         0xc4 => {
             println!(
-                "CNZ    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CNZ    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -401,9 +401,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         }
         0xd4 => {
             println!(
-                "CNC    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CNC    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -417,9 +417,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xd9 => println!("-"),
         0xda => {
             println!(
-                "JC     {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JC     ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -429,9 +429,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         }
         0xdc => {
             println!(
-                "CC     {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CC     ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -446,18 +446,18 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xe1 => println!("POP    H"),
         0xe2 => {
             println!(
-                "JPO    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JPO    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
         0xe3 => println!("XTHL"),
         0xe4 => {
             println!(
-                "CPO    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CPO    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -471,18 +471,18 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xe9 => println!("PCHL"),
         0xea => {
             println!(
-                "JPE    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JPE    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
         0xeb => println!("XCHG"),
         0xec => {
             println!(
-                "CPE    {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CPE    ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -506,9 +506,9 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xf3 => println!("DI"),
         0xf4 => {
             println!(
-                "CP     {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CP     ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
@@ -522,18 +522,18 @@ fn dissasemble_8080(buffer: &Vec<u8>, pointer: usize) -> usize {
         0xf9 => println!("SPHL"),
         0xfa => {
             println!(
-                "JM     {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "JM     ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
         0xfb => println!("EI"),
         0xfc => {
             println!(
-                "CM     {:02x}{:02x}",
-                buffer[pointer + 1],
-                buffer[pointer + 2]
+                "CM     ${:02x}{:02x}",
+                buffer[pointer + 2],
+                buffer[pointer + 1]
             );
             opbytes = 3;
         }
